@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main">
+    <div class="display_box">
+        <p id="display"></p>
+    </div>
+    <div class="values">
+    <button class="AC" onclick="AC()">AC</button>
+    <button class="del" onclick="del()">DEL</button>
+    <button class="operator" onclick="my('%')">%</button>
+    <button class="operator" onclick="my('+')">+</button>
+    <button class="number" onclick="my(7)">7</button>
+    <button class="number" onclick="my(8)">8</button>
+    <button class="number" onclick="my(9)">9</button>
+    <button class="operator" onclick="my('-')">-</button>
+    <button class="number" onclick="my(4)">4</button>
+    <button class="number" onclick="my(5)">5</button>
+    <button class="number" onclick="my(6)">6</button>
+    <button class="operator" onclick="my('*')">*</button>
+    <button class="number" onclick="my('1')"">1</button>
+    <button class="number" onclick="my(2)">2</button> 
+    <button class="number" onclick="my(3)">3</button>
+    <button class="operator" onclick="my('/')">/</button>
+    <button class="number" onclick="my(0)">0</button>
+    <button class="number" onclick="my('.')">.</button>
+    <button class="operator" onclick="sq()">x<sup>2</sup></button>
+    <button class="equ" onclick="equ()">=</button>
+    </div>
+    </div>
+    
+    
+    
+    
+    
+    <!-- <p id="result"></p> -->
+    <!-- <script>
+        let str1="";
+        let str2="";            //Another way doing calculator
+        let op;
+        let op_ = false,equal=false;
+        function my(num)
+        {
+            if(equal === true)
+            {
+                str1="";
+                equal=false;
+            }
+            if(op_ === false)
+            {
+                str1+=num;
+                document.getElementById("display").innerHTML=str1;
+            }
+            else
+            {
+                str2+=num;
+                document.getElementById("display").innerHTML=str1+op+str2;
+            }
+            
+        }
+        function ope(oper)
+        {
+            if(equal === true)
+            {
+                equal =false;
+            }
+            if(op_ === true)
+            {
+                if(op === '+')
+                {
+                    str1=(str1-'0')+(str2-'0');
+                    str2="";
+                }
+                else if(op === '-')
+                {
+                    str1 = str1-str2;
+                    str2="";
+                }
+                else if(op === '*')
+                {
+                    str1 = str1*str2;
+                    str2="";
+                }
+                else if(op === '/')
+                {
+                    str1 = str1/str2;
+                    str2="";
+                }
+            }
+            op = oper;
+            document.getElementById("display").innerHTML=str1+op+str2;
+            op_ = true;
+        }
+        function equ()
+        {
+            equal=true;
+            if(op === '+')
+            {
+            str1=(str1-'0')+(str2-'0');
+            str2="";
+            }
+            else if(op === '-')
+            {
+                str1 = str1-str2;
+                str2="";
+            }
+            else if(op === '*')
+            {
+                str1 = str1*str2;
+                str2="";
+            }
+            else if(op === '/')
+            {
+                str1 = str1/str2;
+                str2="";
+            }
+            document.getElementById("display").innerHTML=str1;
+            op_ = false;
+        }
+        function AC()
+        {
+            str1="";
+            str2="";
+            op_=false;
+            document.getElementById("display").innerHTML="";
+        }
+    </script> -->
+    <script>
+        let str=""
+        function my(val)
+        {
+            str+=val;
+            document.getElementById("display").innerHTML =str;
+            document.getElementById("result").innerHTML =eval(str);
+        }
+        function equ()
+        {
+            document.getElementById("display").innerHTML =eval(str);
+            str=eval(str)+"";
+            document.getElementById("result").innerHTML = "";
+        }
+        function AC()
+        {
+            str="";
+            document.getElementById("display").innerHTML =str;
+            document.getElementById("result").innerHTML = "";
+        }
+        function del()
+        {
+            str=str.substring(0,str.length-1);
+            document.getElementById("display").innerHTML =str;
+            let x = document.getElementById("display").innerText;
+            document.getElementById("result").innerHTML =eval(x);
+        }
+        function sq()
+        {
+            str=eval(str)+"";
+            str=str*str;
+            document.getElementById("display").innerHTML =str;
+        }
+    </script>
+</body>
+</html>
